@@ -1,0 +1,226 @@
+<?xml version="1.0" standalone="yes"?>
+
+<dancingCompetitions>
+
+<Competition date = "2008-06-10" place = "Auckland">
+  
+	<Dance name = "Rumba" category = "Latin" origin = "Cuba" order_no = "1">
+		<dancePair ref_pair = "p7557" score = "28.75"/>
+		<dancePair ref_pair = "p9668" score = "28.0"/>
+		<dancePair ref_pair = "p8117" score = "26.75"/>
+		<dancePair ref_pair = "p9669" score = "25.5"/>
+	</Dance>
+
+	<Dance name = "Samba" category = "Latin" origin = "Brazil" order_no = "2">
+		<dancePair ref_pair = "p7557" score = "29.0"/>
+		<dancePair ref_pair = "p9668" score = "26.75"/>
+		<dancePair ref_pair = "p8117" score = "25.5"/>
+		<dancePair ref_pair = "p9669" score = "24.75"/>
+	</Dance>
+
+	<Dance name = "Salsa" category = "Latin" origin = "Puerto Rico" order_no = "3">
+		<dancePair ref_pair = "p7557" score = "26.75"/>
+		<dancePair ref_pair = "p9668" score = "28.75"/>
+		<dancePair ref_pair = "p8117" score = "30.0"/>
+		<dancePair ref_pair = "p9669" score = "26.5"/>
+	</Dance>
+
+	<Dance name = "Mambo" category = "Latin" origin = "Cuba" order_no = "4">
+		<dancePair ref_pair = "p7557" score = "28.75"/>
+		<dancePair ref_pair = "p9668" score = "28.0"/>
+		<dancePair ref_pair = "p8117" score = "26.75"/>
+		<dancePair ref_pair = "p9669" score = "27.5"/>
+	</Dance>
+	
+</Competition>
+
+<Dancers>
+
+   <he_dancers>	
+	<Dancer dancer_id="d7007">
+		<Name>James</Name>
+		<Surname>Bond</Surname>
+		<Address>London</Address>
+	</Dancer>
+	<Dancer dancer_id="d3003">
+		<Name>Craig</Name>
+		<Surname>Smith</Surname>
+		<Address>Wellington</Address>
+	</Dancer>
+	<Dancer dancer_id="d3007">
+		<Name>Matthew</Name>
+		<Surname>Brown</Surname>
+		<Address>Auckland</Address>
+	</Dancer>
+	<Dancer dancer_id="d4007">
+		<Name>Simon</Name>
+		<Surname>Smith</Surname>
+		<Address>Hamilton</Address>
+	</Dancer>
+	<Dancer dancer_id="d5007">
+		<Name>Paul</Name>
+		<Surname>Morgan</Surname>
+		<Address>Upper Hutt</Address>
+	</Dancer>
+	<Dancer dancer_id="d8007">
+		<Name>Paul</Name>
+		<Surname>Morgan</Surname>
+		<Address>Brisbane</Address>
+	</Dancer>
+	<Dancer dancer_id="d9009">
+		<Name>Gordon</Name>
+		<Surname>McDonald</Surname>
+		<Address>Glasgow</Address>
+	</Dancer>
+
+	<Dancer dancer_id="d9007">
+		<Name>Robert</Name>
+		<Surname>Taylor</Surname>
+		<Address>Dalas</Address>
+	</Dancer>
+	<Dancer dancer_id="d9008">
+		<Name>Dimitrij</Name>
+		<Surname>Tursunov</Surname>
+		<Address>Moscow</Address>
+	</Dancer>
+
+   </he_dancers>
+
+
+   <she_dancers>
+	<Dancer dancer_id="d1001">
+		<Name>Anny</Name>
+		<Surname>Manypenny</Surname>
+		<Address>London</Address>
+	</Dancer>
+	
+	<Dancer dancer_id="d2002">
+		<Name>Anny</Name>
+		<Surname>Smith</Surname>
+		<Address>Wellington</Address>
+	</Dancer>
+	
+	<Dancer dancer_id="d5005">
+		<Name>Mimi</Name>
+		<Surname>Dutch</Surname>
+		<Address>Amsterdam</Address>		
+	</Dancer>
+	<Dancer dancer_id="d6006">
+		<Name>Sally Ann</Name>
+		<Surname>Hine</Surname>
+		<Address>Hamilton</Address>		
+	</Dancer>
+	<Dancer dancer_id="d8008">
+		<Name>Elaine</Name>
+		<Surname>Freeman</Surname>
+		<Address>New Plimuth</Address>		
+	</Dancer>
+	<Dancer dancer_id="d5001">
+		<Name>Pamela</Name>
+		<Surname>Clark</Surname>
+		<Address>Lower Hutt</Address>		
+	</Dancer>
+	<Dancer dancer_id="d5002">
+		<Name>Miriam</Name>
+		<Surname>Da Silva</Surname>
+		<Address>Madrid</Address>		
+	</Dancer>
+	<Dancer dancer_id="d5003">
+		<Name>Bonny</Name>
+		<Surname>Taylor</Surname>
+		<Address>New York</Address>		
+	</Dancer>
+	<Dancer dancer_id="d5004">
+		<Name>Susan</Name>
+		<Surname>Anslow</Surname>
+		<Address>Auckland</Address>		
+	</Dancer>
+	<Dancer dancer_id="d5006">
+		<Name>Jeny</Name>
+		<Surname>Morgan</Surname>
+		<Address>Baltimor</Address>		
+	</Dancer>
+
+	<Dancer dancer_id="d5007">
+		<Name>Shirley</Name>
+		<Surname>Templ</Surname>
+		<Address>Boston</Address>		
+	</Dancer>
+
+   </she_dancers>
+
+
+</Dancers>
+
+<Pairs>
+
+	<Pair pair_id = "p7117">
+		<he ref_he_dancer = "d7007"/>
+		<she ref_she_dancer = "d1001"/>
+	</Pair>
+
+	<Pair pair_id = "p3223">
+		<he ref_he_dancer="d3003"/>
+		<she ref_she_dancer="d2002"/>
+	</Pair>
+
+	<Pair pair_id = "p7557">
+		<he ref_he_dancer = "d7007"/>
+		<she ref_she_dancer = "d5005"/>
+	</Pair>
+	<Pair pair_id = "p5887">
+		<he ref_he_dancer = "d5007"/>
+		<she ref_she_dancer = "d8008"/>
+	</Pair>
+	<Pair pair_id = "p3667">
+		<he ref_he_dancer = "d3007"/>
+		<she ref_she_dancer = "d6006"/>
+	</Pair>
+	<Pair pair_id = "p7537">
+		<he ref_he_dancer = "d7007"/>
+		<she ref_she_dancer = "d5003"/>
+	</Pair>
+	<Pair pair_id = "p4517">
+		<he ref_he_dancer = "d4007"/>
+		<she ref_she_dancer = "d5001"/>
+	</Pair>
+	<Pair pair_id = "p8547">
+		<he ref_he_dancer = "d8007"/>
+		<she ref_she_dancer = "d5004"/>
+	</Pair>
+	<Pair pair_id = "p9569">
+		<he ref_he_dancer = "d9009"/>
+		<she ref_she_dancer = "d5006"/>
+	</Pair>
+	<Pair pair_id = "p7577">
+		<he ref_he_dancer = "d7007"/>
+		<she ref_she_dancer = "d5007"/>
+	</Pair>
+	<Pair pair_id = "p9559">
+		<he ref_he_dancer = "d9009"/>
+		<she ref_she_dancer = "d5005"/>
+	</Pair>
+	<Pair pair_id = "p9669">
+		<he ref_he_dancer = "d9009"/>
+		<she ref_she_dancer = "d6006"/>
+	</Pair>
+	<Pair pair_id = "p4117">
+		<he ref_he_dancer = "d4007"/>
+		<she ref_she_dancer = "d1001"/>
+	</Pair>
+	<Pair pair_id = "p8117">
+		<he ref_he_dancer = "d8007"/>
+		<she ref_she_dancer = "d1001"/>
+	</Pair>
+	<Pair pair_id = "p9668">
+		<he ref_he_dancer = "d9008"/>
+		<she ref_she_dancer = "d6006"/>
+	</Pair>
+	<Pair pair_id = "p9577">
+		<he ref_he_dancer = "d9007"/>
+		<she ref_she_dancer = "d5007"/>
+	</Pair>
+
+</Pairs>
+
+</dancingCompetitions>
