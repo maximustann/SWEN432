@@ -1,5 +1,5 @@
-xquery version "3.0";
-let $file := fn:doc("/db/assignment3/dancingCompetitions_14.xml")
+xquery version "1.0";
+let $file := fn:doc("/db/boxiong/dancingCompetitions_14.xml")
 
 let $wel := $file/dancingCompetitions/Competition[@place="Wellington"]
 let $wel_2010 := $wel[substring(@date, 1, 4)="2010"]

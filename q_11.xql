@@ -1,6 +1,6 @@
-xquery version "3.0";
+xquery version "1.0";
 
-let $file := fn:doc("/db/assignment3/dancingCompetitions_14.xml")
+let $file := fn:doc("/db/boxiong/dancingCompetitions_14.xml")
 let $she_dancers := $file/dancingCompetitions/Dancers/she_dancers/Dancer
 
 let $she_in_pairs := (
@@ -24,29 +24,6 @@ for $she in $she_id_list
     let $she_total := sum($score_list[@she_id=$she]/@score) div $div
     return <she she_id="{$she}" score="{$she_total}"/>
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 let $he_dancers := $file/dancingCompetitions/Dancers/he_dancers/Dancer

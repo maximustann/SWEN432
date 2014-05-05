@@ -1,6 +1,6 @@
-xquery version "3.0";
+xquery version "1.0";
 
-let $file := fn:doc("/db/assignment3/dancingCompetitions_14.xml")
+let $file := fn:doc("/db/boxiong/dancingCompetitions_14.xml")
 let $pair := $file/dancingCompetitions/Pairs/Pair[@pair_id="p9669"]
 let $she := $file/dancingCompetitions/Dancers/she_dancers/Dancer[@dancer_id=$pair/she/@ref_she_dancer]
 let $he := $file/dancingCompetitions/Dancers/he_dancers/Dancer[@dancer_id=$pair/he/@ref_he_dancer]

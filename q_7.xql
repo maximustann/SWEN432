@@ -1,7 +1,7 @@
-xquery version "3.0";
+xquery version "1.0";
 
 
-let $file := fn:doc("/db/assignment3/dancingCompetitions_14.xml")
+let $file := fn:doc("/db/boxiong/dancingCompetitions_14.xml")
 
 return 
     <NumberOfDancers>
