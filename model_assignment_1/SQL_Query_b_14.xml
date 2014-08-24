@@ -1,0 +1,4 @@
+<?xml version = "1.0" standalone = "no"?>
+<SELECT>
+	<arith_exp>2+2</arith_exp>
+</SELECT>

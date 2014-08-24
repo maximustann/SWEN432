@@ -1,0 +1,162 @@
+<?xml version="1.0" standalone="no"?>
+
+<TrainTimeTable><!--&1-->
+  <Line name="Hutt Valley"><!--&2-->
+    <Direction name = "North"><!--&3-->
+      <Service no="1" from = "Wellington" to = "Upper Hutt"><!--&4-->
+        <Station name = "Wellington" dept_time = "05:25 am"><!--&5-->
+          <Station_Facilities><!--&6-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&7-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Ngauranga" arr_time = "05:28 am" dept_time = "05:29 am"><!--&8-->
+          <Station_Facilities><!--&9-->
+	    <Text>A lengthy description of station Ngauranga facilities with photos</Text><!--&10-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Petone" arr_time = "05:30 am" dept_time = "05:32 am"><!--&11-->
+          <Station_Facilities><!--&12-->
+	    <Text>A lengthy description of station Petone facilities with photos</Text><!--&13-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Waterloo" arr_time = "05:38 am" dept_time = "05:40 am"><!--&14-->
+          <Station_Facilities><!--&15-->
+	    <Text>A lengthy description of station Waterloo facilities with photos</Text><!--&16-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Taita" arr_time = "05:52 am" dept_time = "05:54 am"><!--&17-->
+          <Station_Facilities><!--&18-->
+	    <Text>A lengthy description of station Taita facilities with photos</Text><!--&19-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Silverstream" arr_time = "05:59 am" dept_time = "06:01 am"><!--&20-->
+          <Station_Facilities><!--&21-->
+	    <Text>A lengthy description of station Silverstream facilities with photos</Text><!--&22-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Upper Hutt" arr_time = "06:10 am"><!--&23-->
+          <Station_Facilities><!--&24-->
+	    <Text>A lengthy description of station Upper Hutt facilities with photos</Text><!--&25-->
+	  </Station_Facilities>
+        </Station>
+      </Service>
+               
+      <Service no="2" from = "Wellington" to = "Taita"><!--&26-->
+        <Station name = "Wellington" dept_time = "06:57 am"><!--&27-->
+          <Station_Facilities><!--&28-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&29-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Petone" arr_time = "07:11 am" dept_time = "07:12 am"><!--&30-->
+          <Station_Facilities><!--&31-->
+	    <Text>A lengthy description of station Petone facilities with photos</Text><!--&32-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Waterloo" arr_time = "07:17 am" dept_time = "07:19 am"><!--&33-->
+          <Station_Facilities><!--&34-->
+	    <Text>A lengthy description of station Waterloo facilities with photos</Text><!--&35-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Taita" arr_time = "07:26 am"><!--&36-->
+          <Station_Facilities><!--&37-->
+	    <Text>A lengthy description of station Taita facilities with photos</Text><!--&38-->
+	  </Station_Facilities>
+        </Station> 
+     </Service> 
+   </Direction>
+    
+    <Direction name = "South"><!--&39-->
+      <Service no="1" from = "Upper Hutt" to = "Wellington"><!--&40-->
+        <Station name = "Upper Hutt" dept_time = "04:30 am"><!--&41-->
+          <Station_Facilities><!--&42-->
+	    <Text>A lengthy description of station Upper Hutt facilities with photos</Text><!--&43-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Waterloo" arr_time = "04:52 am" dept_time = "04:55 am"><!--&44-->
+          <Station_Facilities><!--&45-->
+	    <Text>A lengthy description of station Waterloo facilities with photos</Text><!--&46-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Wellington" arr_time = "05:16 am"><!--&47-->
+          <Station_Facilities><!--&48-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&49-->
+	  </Station_Facilities>
+        </Station>
+      </Service>
+    </Direction>
+  </Line>
+
+  <Line name="Waikanae"><!--&50-->
+    <Direction name = "North-West"><!--&51-->
+      <Service no="1" from = "Wellington" to = "Waikanae"><!--&52-->
+        <Station name = "Wellington" dept_time = "05:25 am"><!--&53-->
+          <Station_Facilities><!--&54-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&55-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Paekakariki" arr_time = "06:10 am" dept_time = "06:12 am"><!--&56-->
+          <Station_Facilities><!--&57-->
+	    <Text>A lengthy description of station Paekakariki facilities with photos</Text><!--&58-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Waikanae" arr_time = "06:33 am"><!--&59-->
+          <Station_Facilities><!--&60-->
+	    <Text>A lengthy description of station Waikanae facilities with photos</Text><!--&61-->
+	  </Station_Facilities>
+        </Station>
+      </Service>
+    </Direction>
+  </Line>
+  
+  <Line name="Wairarapa"><!--&62-->
+    <Direction name = "North"><!--&63-->
+      <Service no="1" from = "Wellington" to = "Masterton"><!--&64-->
+        <Station name = "Wellington" dept_time = "08:25 am"><!--&65-->
+          <Station_Facilities><!--&66-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&67-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Petone" arr_time = "05:30 am" dept_time = "08:38 am"><!--&68-->
+          <Station_Facilities><!--&69-->
+	    <Text>A lengthy description of station Petone facilities with photos</Text><!--&70-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Waterloo" arr_time = "08:42 am" dept_time = "08:44 am"><!--&71-->
+          <Station_Facilities><!--&72-->
+	    <Text>A lengthy description of station Waterloo facilities with photos</Text><!--&73-->
+	  </Station_Facilities>
+        </Station>
+         <Station name = "Masterton" arr_time = "10:00 am"><!--&74-->
+          <Station_Facilities><!--&75-->
+	    <Text>A lengthy description of station Masterton facilities with photos</Text><!--&76-->
+	  </Station_Facilities>
+        </Station>
+      </Service>
+    </Direction>
+    
+    <Direction name = "South"><!--&77-->
+      <Service no="1" from = "Masterton" to = "Wellington"><!--&78-->
+        <Station name = "Masterton" dept_time = "05:45 am"><!--&79-->
+          <Station_Facilities><!--&80-->
+	    <Text>A lengthy description of station Masterton facilities with photos</Text><!--&81-->
+	  </Station_Facilities>
+        </Station>
+         <Station name = "Waterloo" arr_time = "07:04 am" dept_time = "07:06 am"><!--&82-->
+          <Station_Facilities><!--&83-->
+	    <Text>A lengthy description of station Waterloo facilities with photos</Text><!--&84-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Petone" arr_time = "07:11 am" dept_time = "07:12 am"><!--&85-->
+          <Station_Facilities><!--&86-->
+	    <Text>A lengthy description of station Petone facilities with photos</Text><!--&87-->
+	  </Station_Facilities>
+        </Station>
+        <Station name = "Wellington" arr_time = "07:26 am"><!--&88-->
+          <Station_Facilities><!--&89-->
+	    <Text>A lengthy description of station Wellington facilities with photos</Text><!--&90-->
+	  </Station_Facilities>
+        </Station>
+      </Service> 
+    </Direction>              
+  </Line>     
+</TrainTimeTable>

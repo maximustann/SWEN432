@@ -1,0 +1,55 @@
+CREATE KEYSPACE S
+WITH REPLICATION = {'class': 'NetworkTopologyStrategy', 'DC1':3};
+
+CREATE TABLE S.user (
+	email_address varchar primary key,
+	password varchar
+);
+
+CREATE TABLE S.vehicles (
+	email_address varchar,
+	vehicle_id varchar,
+	colour varchar,
+	type varchar,
+	PRIMARY KEY(email_address, vehicle_id)
+);
+
+CREATE TABLE S.datapoint (
+	sequence timestamp,
+	email_address varchar,
+	vehicle_id varchar,
+	latitude double,
+	longitude double,
+	speed double,
+	primary key((email_address, vehicle_id), sequence)
+)	WITH CLUSTERING ORDER BY(sequence ASC);
+
+CREATE TABLE S.vehicle_count (
+	email_address varchar,
+	number_of_vehicle counter,
+	primary key((email_address))
+);
+
+CREATE TABLE S.user_activate_count (
+	email_address varchar,
+	date Timestamp,
+	number_of_datapoint counter,
+	primary key((email_address, date))
+);
+
+CREATE TABLE S.user_activate_vehicle (
+	email_address varchar,
+	date Timestamp,
+	vehicle_id varchar,
+	count counter,
+	primary key((email_address, vehicle_id), date));
+
+CREATE TABLE S.vehicle_recent_location (
+	email_address varchar,
+	date timestamp,
+	vehicle_id varchar,
+	latitude double,
+	longitude double,
+	speed double,
+	primary key((email_address, vehicle_id, date))
+);

@@ -1,0 +1,3 @@
+select date from user_activate_vehicle 
+using consistency SERIAL
+where email_address='fred@fred.com' and vehicle_id='def123';

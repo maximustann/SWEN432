@@ -1,0 +1,128 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   
+     <xsd:element name="Boat_Hire" type = "Boat_HireType">
+       <!—Boat_Hire element is the context-->
+       <xsd:key name = "Sailor_Key">
+	 <xsd:selector xpath = "Sailors/Sailor"/>
+	 <xsd:field xpath = "@SailorId"/>
+     </xsd:key>
+
+     <xsd:key name = "Grade_Key">
+	<xsd:selector xpath = "Grade"/>
+	<xsd:field xpath = "@GradeId"/>
+     </xsd:key>
+
+       <xsd:keyref name = "refGrade" refer = "Grade_Key">
+	 <xsd:selector xpath = "Sailors/Sailor"/>
+	 <xsd:field xpath = "@ref_grade"/>
+     </xsd:keyref>
+
+     <xsd:keyref name = "refSailor" refer = "Sailor_Key">
+	<xsd:selector xpath = "Marina/Boat/Reserves/Res_Sailor"/>
+	<xsd:field xpath = "@ref_sail"/>
+     </xsd:keyref>
+
+     <xsd:key name = "Boat_Key">
+	<xsd:selector xpath = "Marina/Boat"/>
+	<xsd:field xpath = "@Number"/>
+     </xsd:key>
+
+     <xsd:key name = "Marina_Key">
+	<xsd:selector xpath = "Marina"/>
+	<xsd:field xpath = "@MarinaId"/>
+     </xsd:key>
+
+   </xsd:element>
+
+	    <xsd:complexType name = "Boat_HireType">
+	       <xsd:sequence>
+	          <xsd:element name="Marina" maxOccurs = "unbounded" type="MarinaType">
+		     <xsd:unique name = "Boat_Name">
+			<xsd:selector xpath = "Boat"/>
+			<xsd:field xpath = "@name"/>
+		     </xsd:unique>
+		  </xsd:element>
+	          <xsd:element name="Sailors" type="SailorsType" />
+		  <xsd:element name="Grade" maxOccurs = "unbounded" type="GradeType"/>
+	       </xsd:sequence>
+	   </xsd:complexType>
+
+	   <xsd:complexType name = "MarinaType">
+		<xsd:sequence>
+		   <xsd:element name = "Boat" maxOccurs = "unbounded" type = "BoatType"/>
+	        </xsd:sequence>
+		<xsd:attribute name = "name" type = "xsd:string" use = "required"/>
+        	<xsd:attribute name = "location" type = "xsd:string" use = "optional"/>
+		<xsd:attribute name = "MarinaId" type = "xsd:string" use = "required"/>
+	   </xsd:complexType>
+   
+	   <xsd:complexType name="BoatType">
+   		<xsd:sequence>
+		   <xsd:element name="Color" type="xsd:string" />
+		   <xsd:element name = "Powered_By" type = "Powered_ByType"/>
+        	   <xsd:element name="Reserves" minOccurs="0" maxOccurs="unbounded">
+			<xsd:complexType>
+				<xsd:sequence>
+		             	   <xsd:element name="Res_Sailor" maxOccurs="unbounded">
+					<xsd:complexType>
+   					   <xsd:attribute name = "ref_sail" type ="xsd:string" use = "required"/>		
+					   <xsd:attribute name = "grade" fixed = "S"/>
+					   <xsd:attribute name = "from" type = "xsd:time" use = "required"/>
+					   <xsd:attribute name = "to" type = "xsd:time" use = "required"/>
+				   	</xsd:complexType>
+				   </xsd:element>
+	        		</xsd:sequence>
+   				<xsd:attribute name = "date" type="xsd:date" use="required"/>
+   			</xsd:complexType>
+	   		<xsd:unique name = "One_Reserv_Per_Day">
+			    <xsd:selector xpath = "Res_Sailor"/>
+	  		    <xsd:field xpath = "@ref_sail"/>
+		       	</xsd:unique>
+		   </xsd:element>
+	       </xsd:sequence>
+  	       <xsd:attribute name = "name" type = "xsd:string" use="required"/>
+	       <xsd:attribute name = "Number" type = "xsd:string" use = "required"/>
+          </xsd:complexType>
+
+          <xsd:complexType name="Powered_ByType">
+              <xsd:choice>
+		  <xsd:sequence>
+                     <xsd:element name="Rows" type = "xsd:anyType" />
+		     <xsd:choice minOccurs = "0">
+			<xsd:element name = "Sail" type = "xsd:anyType"/>
+			<xsd:element name = "Motor" type = "xsd:anyType"/>
+		     </xsd:choice>			
+		 </xsd:sequence>
+		 <xsd:choice>
+		     <xsd:sequence>
+			<xsd:element name = "Sail" type = "xsd:anyType"/>
+			<xsd:element name = "Motor" minOccurs = "0" type = "xsd:anyType"/>
+		     </xsd:sequence>
+		     <xsd:element name = "Motor" type = "xsd:anyType"/>
+		</xsd:choice>
+              </xsd:choice>
+	  </xsd:complexType>
+
+          <xsd:complexType name="SailorsType">
+              <xsd:sequence>
+                  <xsd:element name="Sailor" maxOccurs = "unbounded" type = "SailorType" />
+              </xsd:sequence>
+	  </xsd:complexType>
+
+          <xsd:complexType name="SailorType">
+              <xsd:sequence>
+                  <xsd:element name="Name" type="xsd:string" />
+                  <xsd:element name="Skills" type="xsd:string" />
+                  <xsd:element name="Address" minOccurs = "0" type="xsd:string" />
+              </xsd:sequence>
+              <xsd:attribute name="SailorId" type="xsd:string" use="required"/>
+	      <xsd:attribute name = "ref_grade" type = "xsd:string" use = "required"/>
+	  </xsd:complexType>
+
+	  <xsd:complexType name="GradeType">
+              <xsd:sequence>
+                  <xsd:element name="Name" type="xsd:string" />
+              </xsd:sequence>
+              <xsd:attribute name = "GradeId" type="xsd:string" use="required"/>
+	  </xsd:complexType>
+</xsd:schema>

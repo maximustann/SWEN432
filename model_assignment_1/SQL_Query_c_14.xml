@@ -1,0 +1,32 @@
+<?xml version = "1.0" standalone = "no"?>
+<SELECT>
+	<list_of_col_names>
+		<COL_NAME>s.StudId</COL_NAME>
+		<COL_NAME>First_Name</COL_NAME>
+		<COL_NAME>Surname</COL_NAME>
+	</list_of_col_names>
+	<FROM>
+		<TAB_NAME>Student s</TAB_NAME>
+	</FROM>
+	<WHERE>
+		<condition>
+			<COL_NAME>s.StudId</COL_NAME>
+			<OPERATOR>IN</OPERATOR>
+			<SELECT>
+				<list_of_col_names>
+					<COL_NAME>StudId</COL_NAME>
+				</list_of_col_names>
+				<FROM>
+					<TAB_NAME>Class</TAB_NAME>
+				</FROM>
+				<WHERE>
+					<condition>
+						<COL_NAME>CODE</COL_NAME>
+						<OPERATOR>=</OPERATOR>
+						<VALUE>SWEN432</VALUE>
+					</condition>
+				</WHERE>
+			</SELECT>
+		</condition>
+	</WHERE>
+</SELECT>

@@ -1,0 +1,14 @@
+anomalous functional dependencies:
+
+
+TrainTimeTable.Line.Direction.Service.Station.@name ->
+			TrainTimeTable.Line.Direction.Service.Station.Facilities.Text.S
+
+
+t1(TrainTimeTable.Line.Direction.Service.Station.@name) = Wellington
+t4(TrainTimeTable.Line.Direction.Service.Station.@name) = Wellington
+
+t1(TrainTimeTable.Line.Direction.Service.Station.Station.Facilities.Text) = &7
+t4(TrainTimeTable.Line.Direction.Service.Station.Station.Facilities.Text) = &55
+
+Therefore, the functional dependency is not satisfied

@@ -1,0 +1,5 @@
+There are 25 maximal trees.
+Because it is not allow duplication in the maximal trees, so each station will
+generate a new maximal tree.
+
+There are total 25 stations. Therefore there are 25 maximal trees.

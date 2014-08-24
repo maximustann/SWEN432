@@ -1,0 +1,41 @@
+Read:
+
+1.
+Each time user log into the IPhone application, the password and username will be send to
+server for checking. At this moment, the username and hashed password stored in the
+database will be read for checking.
+
+2.
+When user want to see information about the vihicles they have registered.The
+list of the vehicles they have registered.
+
+3.
+When user want to check the days that each vehicle has been active.
+Timestamp will be read.
+
+4.
+When user want to check vehicle the most recent location and speed for a given
+day.
+Timestamp will be read.
+Latitude and longtitude, which will be used for calculating location.
+Speed information will be read as well.
+
+5.
+For each vehicle a track of locations for a specified time span for a given
+day.
+Timestamp, Latitude and longtitude will be read.
+
+
+Write:
+
+1.
+Create personal information.
+
+2.
+Register vehicles.
+
+3.
+Each time the phone is in the vehicle, the application will collect Data
+Points and send it to the server. Then the server write these information into
+the database.
+

@@ -1,0 +1,56 @@
+<?xml version = "1.0" standalone = "no"?>
+<SELECT>
+	<list_of_col_names>
+		<COL_NAME>s.StudId</COL_NAME>
+		<COL_NAME>First_Name</COL_NAME>
+		<COL_NAME>Surname</COL_NAME>
+		<COL_NAME>Title</COL_NAME>
+		<COL_NAME>Grade</COL_NAME>
+	</list_of_col_names>
+	<FROM>
+		<TAB_NAME>Student s</TAB_NAME>
+		<SELECT>
+			<list_of_col_names>
+				<COL_NAME>StudId</COL_NAME>
+				<COL_NAME>Title</COL_NAME>
+				<COL_NAME>Grade</COL_NAME>
+			</list_of_col_names>
+			<FROM>
+				<TAB_NAME>Course</TAB_NAME>
+				<TAB_NAME>Class</TAB_NAME>
+			</FROM>
+			<WHERE>
+				<condition>
+					<COL_NAME>CODE</COL_NAME>
+					<OPERATOR>=</OPERATOR>
+					<VALUE>SWEN432</VALUE>
+				</condition>
+				<log_operator value = "AND"/>
+				<condition>
+					<COL_NAME>Year</COL_NAME>
+					<OPERATOR>=</OPERATOR>
+					<VALUE>2014</VALUE>
+				</condition>
+				<log_operator value = "AND"/>
+				<condition>
+					<COL_NAME>c.Code</COL_NAME>
+					<OPERATOR>=</OPERATOR>
+					<COL_NAME>c.Code</COL_NAME>
+				</condition>
+			</WHERE>
+		</SELECT>
+		<ALIAS>cg</ALIAS>
+	</FROM>
+	<WHERE>
+		<condition>
+			<COL_NAME>s.StudId</COL_NAME>
+			<OPERATOR>=</OPERATOR>
+			<COL_NAME>cg.StudentId</COL_NAME>
+		</condition>
+	</WHERE>
+	<ORDER_BY sort_order = "DESC">
+		<list_of_col_names>
+			<COL_NAME>s.StudId</COL_NAME>
+		</list_of_col_names>
+	</ORDER_BY>
+</SELECT>

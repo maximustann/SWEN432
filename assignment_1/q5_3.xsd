@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="F">
+		<xs:complexType>
+			<xs:sequence minOccurs="1">
+				<xs:element name="C" minOccurs="1"/>
+				<xs:element name="L" />
+				<xs:element name="A" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="S" minOccurs="0"/>
+				<xs:element name="LorS">
+					<xs:complexType>
+						<xs:choice minOccurs="1">
+							<xs:element name="L" />
+							<xs:element name="S" />
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

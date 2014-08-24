@@ -1,0 +1,3 @@
+select password from S.user 
+using consistency ALL
+where email_address='fred@fred.com';

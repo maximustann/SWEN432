@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- simpleType -->
+<xs:element name="Text" type="xs:string"/>
+
+
+<!-- attribute -->
+<xs:attribute name="name" type="xs:string"/>
+<xs:attribute name="no" type="xs:integer"/>
+<xs:attribute name="from" type="xs:string"/>
+<xs:attribute name="to" type="xs:string"/>
+<xs:attribute name="arr_time" type="xs:string"/>
+<xs:attribute name="dept_time" type="xs:string"/>
+<xs:attribute name="url" type="xs:string"/>
+<!--complexType -->
+<xs:element name="TrainTimeTable">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Line" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:unique name="Sta_uni">
+		<xs:selector xpath="Line"/>
+		<xs:field xpath="Direction/attribute::name"/>
+		<xs:field xpath="Direction/Service/Station/attribute::arr_time"/>
+	<!--
+		<xs:field xpath="Line/Direction/@name"/>
+		<xs:field xpath="Line/Direction/Service/Station/@name"/>
+		<xs:field xpath="Line/Direction/Service/Station/@arr_time"/>
+	-->
+	</xs:unique>
+
+</xs:element>
+<xs:element name="Line">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Direction" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	<xs:attribute ref="name" use="required"/>
+	</xs:complexType>
+
+</xs:element>
+
+
+<xs:element name="Direction">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Service" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	<xs:attribute ref="name" use="required"/>
+	</xs:complexType>
+
+
+	<xs:key name="ser_key">
+		<xs:selector xpath="Service"/>
+		<xs:field xpath="@no"/>
+	</xs:key>
+
+
+</xs:element>
+
+<xs:element name="Service">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Station"  maxOccurs="unbounded"/>
+		</xs:sequence>
+	<xs:attribute ref="no" use="required"/>
+	<xs:attribute ref="from" use="required"/>
+	<xs:attribute ref="to" use="required"/>
+	</xs:complexType>
+	
+</xs:element>
+
+<xs:element name="Station">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Station_Facilities"/>
+		</xs:sequence>
+	<xs:attribute ref="name" use="required"/>
+	<xs:attribute ref="arr_time" use="optional"/>
+	<xs:attribute ref="dept_time" use="optional"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="Station_Facilities">
+	<xs:complexType>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element ref="Text"/>
+				<xs:element ref="Photo"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+
+<xs:element name="Photo">
+	<xs:complexType>
+		<xs:attribute ref="url"/>
+	</xs:complexType>
+</xs:element>
+
+
+</xs:schema>

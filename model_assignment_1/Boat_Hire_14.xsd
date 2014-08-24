@@ -1,0 +1,89 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+   
+     <xsd:element name="Boat_Hire" type = "Boat_HireType"/>
+
+
+	    <xsd:complexType name = "Boat_HireType">
+
+	       <xsd:sequence>
+
+	          <xsd:element name="Marina" maxOccurs = "unbounded" type="MarinaType"/>
+
+	          <xsd:element name="Sailors" type="SailorsType" />
+	
+       </xsd:sequence>
+
+	    </xsd:complexType>
+
+
+	   <xsd:complexType name = "MarinaType">
+		<xsd:sequence>
+		   <xsd:element name = "Boat" maxOccurs = "unbounded" type = "BoatType"/>
+		</xsd:sequence>
+		<xsd:attribute name = "name" type = "xsd:string" use = "required"/>
+        	<xsd:attribute name = "location" type = "xsd:string" use = "optional"/>
+	   </xsd:complexType>
+   
+   
+	   <xsd:complexType name="BoatType">
+
+   		<xsd:sequence>
+
+		   <xsd:element name="Number" type="xsd:int" />
+        	
+		   <xsd:element name="Color" type="xsd:string" />
+
+        	   <xsd:element name="Reserves" minOccurs="0" maxOccurs="unbounded">
+
+			<xsd:complexType>
+
+				<xsd:sequence>
+
+		             		<xsd:element name="Date" type="xsd:date"/>
+
+        			</xsd:sequence>
+
+   				<xsd:attribute name="ref_sail" type="xsd:IDREF" use="required"/>
+
+   			</xsd:complexType>
+
+		   </xsd:element>
+
+	       </xsd:sequence>
+
+  	       <xsd:attribute name="name" type="xsd:string" use="required"/>
+          </xsd:complexType>
+
+
+
+          <xsd:complexType name="SailorsType">
+
+              <xsd:sequence>
+
+                  <xsd:element name="Sailor" maxOccurs = "unbounded" type = "SailorType" />
+
+              </xsd:sequence>
+
+	  </xsd:complexType>
+
+
+          <xsd:complexType name="SailorType">
+
+              <xsd:sequence>
+
+                  <xsd:element name="Name" type="xsd:string" />
+
+                  <xsd:element name="Skills" type="xsd:string" />
+
+                  <xsd:element name="Address" minOccurs = "0" type="xsd:string" />
+
+              </xsd:sequence>
+
+              <xsd:attribute name="SailorId" type="xsd:ID" use="required"/>
+
+	  </xsd:complexType>
+
+
+</xsd:schema>

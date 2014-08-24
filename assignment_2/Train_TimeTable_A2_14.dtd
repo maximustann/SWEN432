@@ -1,0 +1,22 @@
+<!ELEMENT TrainTimeTable (Line*)>
+
+<!ELEMENT Line (Direction*)>
+
+<!ATTLIST Line name CDATA #REQUIRED>
+
+<!ELEMENT Direction (Service*)>
+
+<!ATTLIST Direction name CDATA #REQUIRED>
+
+<!ELEMENT Service (Station+)>
+
+<!ATTLIST Service no ID #REQUIRED from CDATA #REQUIRED to CDATA #REQUIRED>
+
+<!ELEMENT Station (Station_Facilities)>
+
+<!ATTLIST Station name CDATA #REQUIRED arr_time CDATA #IMPLIED dept_time CDATA #IMPLIED>
+
+<!ELEMENT Station_Facilities (Text | Photo)+>
+<!ELEMENT Text (#PCDATA)>
+<!ELEMENT Photo EMPTY>
+<!ATTLIST Photo url CDATA #REQUIRED>

@@ -1,0 +1,28 @@
+xquery version "1.0";
+
+let $file := fn:doc("/db/boxiong/Boat_Hire_A4_14.xml")
+
+let $boat_list :=
+for $boat in $file/Boat_Hire/Marina/Boat
+	return $boat
+
+let $result :=
+for $boat in $boat_list
+	return if (empty($boat/Reserves))
+			then $boat
+			else()
+let $m :=
+for $marina in $file/Boat_Hire
+	return if ($marina/Boat/@name=$result[0]/@name)
+			then $marina
+			else()
+return <Unused_Boats>
+		<Marina>
+{
+		for $i in $result
+			return <Boat Number="{$i/@Number} Name="{$i/@name}"/>
+}
+		</Marina>
+		</Unused_Boats>
+
+

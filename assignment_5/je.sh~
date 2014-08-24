@@ -1,0 +1,7 @@
+#!/bin/bash
+cd ~/cassandra_configuration/
+cp cassandra-topology.properties ~/cassandra_training/us-east-1/node{1..6}/conf/cassandra-topology.properties
+
+for k in $(seq 1 6)
+	do cp cassandra.yaml_$k ~/cassandra_training/us-east-1/node$k/conf/cassandra.yaml
+done

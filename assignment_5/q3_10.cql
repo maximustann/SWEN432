@@ -1,0 +1,31 @@
+consistency ONE;
+INSERT INTO S.datapoint (
+	sequence,
+	email_address,
+	vehicle_id,
+	latitude,
+	longitude,
+	speed
+)
+values(
+'2014-05-26 10:31:10+1200',
+'fred@fred.com',
+'abc123',
+-39.733, 175.56, 32
+);
+
+UPDATE S.user_activate_count
+SET
+	number_of_datapoint = number_of_datapoint + 1
+WHERE email_address='fred@fred.com' and date = '2014-05-26';
+
+
+UPDATE S.user_activate_vehicle
+SET count = count + 1
+WHERE email_address='fred@fred.com' and vehicle_id = 'abc123' and date='2014-05-26';
+
+UPDATE S.vehicle_recent_location
+SET latitude = -39.733, longitude = 175.56, speed = 32
+WHERE email_address='fred@fred.com' and vehicle_id = 'abc123' and date='2014-05-26';
+
+

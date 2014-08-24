@@ -1,0 +1,70 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE Boat_Hire SYSTEM "Boat_Hire_Extended_14.dtd">
+	
+<Boat_Hire>
+
+	<Marina name = "Sea View" location = "Petone">
+
+		<Boat name = "Flying Dutch">
+			<Number>313</Number>
+			<Color>blue</Color>
+			<Reserves ref_sail="s007"> <!-- The value of an attribute of type ID cannot start with a digit-->
+				<Date>2014-03-14</Date> <!-- should contains <Date> element-->
+			</Reserves>
+			<Reserves ref_sail="s313">
+				<Date>2003-03-17 &lt; 2014-03-15</Date> <!--<Date> element-->
+			</Reserves>
+			<Driven_By>
+				<Row />
+			</Driven_By>
+		</Boat>
+
+		<Boat name = "Blue Shark">
+			<Number>515</Number>
+			<Color>yellow</Color>
+			<Reserves ref_sail="s007">
+				<Date>2014-03-14</Date> <!-- <Date> element -->
+			</Reserves>
+			<Reserves ref_sail="s999">
+				<Date>2014-03-15</Date> <!-- <Date element -->
+			</Reserves>
+			<Driven_By>
+				<Sail />
+				<Motor />
+			</Driven_By>
+		</Boat>
+	</Marina>
+	<Marina name = "Port Nickolson" location = "Wellington">
+
+		<Boat name = "Red Codd">
+			<Number>616</Number>
+			<Color>yellow</Color>
+			<Reserves ref_sail="s999">
+				<Date>2014-03-15</Date> <!--<Date element>-->
+			</Reserves>
+			<Driven_By>
+				<Row />
+				<Sail />
+			</Driven_By>
+		</Boat>
+	</Marina>
+		<Sailors>
+			<Sailor SailorId="s007"> <!--Missing the SailorId attribute-->
+				<Name>James</Name> <!-- There is no element named "Surname"-->
+				<Skills></Skills>
+				<Address></Address> <!--Missing <skills> and <Address>-->
+			</Sailor><!-- There is no element named "SailorId"-->
+			<Sailor SailorId="s313"> <!-- Missing the SailorId attribute -->
+				<Name>Peter</Name>
+				<Skills></Skills>
+				<Address></Address>
+			</Sailor>
+
+			<Sailor SailorId="s999"> <!-- Missing the SailorId attribute -->
+				<Name>Milan</Name>
+				<Skills>Rowing, Sailing, First Aid</Skills>
+				<Address>Wellington</Address>
+			</Sailor>
+		</Sailors>
+</Boat_Hire>
+

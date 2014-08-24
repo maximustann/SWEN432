@@ -1,0 +1,118 @@
+<!--in the first expression, (A, P) can occur zero or one time inside the "Q"
+element as a pair. 
+	in the second expression, (A?, P?) each of them could appear zero or one time,
+It does not need to be in a pair. -->
+
+<EXAMPLE_1_first>
+	<Q>
+		<A></A>
+		<P></P>
+	</Q>
+
+	<Q></Q>
+
+</EXAMPLE_1_first>
+
+
+<EXAMPLE_1_second>
+	<Q>
+		<A></A>
+	</Q>
+
+	<Q>
+		<P></P>
+	</Q>
+	
+	<Q>
+		<A></A>
+		<P></P>
+	</Q>
+
+	<Q></Q>
+</EXAMPLE_1_second>
+
+
+<!--(A, P)+ means (A, P) must occur one or more times inside the "Q" element.
+They must appears as a pair.
+	(A+, P+) each element in Q element must occur one or more times. -->
+
+
+<EXAMPLE_2_first>
+	<Q>
+		<A></A>
+		<P></P>
+	</Q>
+
+	<Q>
+		<A></A>
+		<P></P>
+		
+		<A></A>
+		<P></P>
+	</Q>
+</EXAMPLE_2_first>
+
+<EXAMPLE_2_second>
+	<Q>
+		<A></A>
+		<P></P>
+	</Q>
+
+	<Q>
+		<A></A>
+		<P></P>
+		<P></P>
+	</Q>
+	
+	<Q>
+		<A></A>
+		<A></A>
+		<P></P>
+	</Q>
+
+</EXAMPLE_2_second>
+
+
+
+
+<!--(A|P)+ means A or P must occur one or more times inside the "Q" element.
+	 (A*, P*) each element in Q element can occur zero or more times. 
+	The difference is, the second one could have no element inside Q.
+-->
+
+
+<EXAMPLE_3_first>
+	<Q>
+		<A></A>
+	</Q>
+
+	<Q>
+		<P></P>
+	</Q>
+	<Q>
+		<A></A>
+		<A></A>
+		<P></P>
+	</Q>
+
+</EXAMPLE_3_first>
+
+<EXAMPLE_3_second>
+	<Q></Q>
+	<Q>
+		<A></A>
+	</Q>
+
+	<Q>
+		<P></P>
+	</Q>
+	<Q>
+		<A></A>
+		<A></A>
+		<P></P>
+		<P></P>
+		<P></P>
+	</Q>
+
+</EXAMPLE_3_second>
+

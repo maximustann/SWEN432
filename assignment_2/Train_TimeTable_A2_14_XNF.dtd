@@ -1,0 +1,27 @@
+<!ELEMENT TrainTimeTable (Line*, Station_list)>
+
+<!ELEMENT Line (Direction*)>
+<!ELEMENT Station_list(Station)+> <!--after transformation paths doesn't contain
+TrainTimeTable.Line.Direction.Service.Station
+ -->
+<!ATTLIST Line name CDATA #REQUIRED>
+
+<!ELEMENT Direction (Service*)>
+
+<!ATTLIST Direction name CDATA #REQUIRED>
+
+<!ELEMENT Service (Station_index)>
+
+<!ATTLIST Service no CDATA #REQUIRED from CDATA #REQUIRED to CDATA #REQUIRED>
+<!ELEMENT Station_index EMPTY>
+<!ATTLIST Station_index name IDREF #REQUIRED dept_time CDATA #IMPLIED arr_time CDATA #IMPLIED>
+
+
+<!ELEMENT Station (Station_Facilities)>
+
+<!ATTLIST Station name ID #REQUIRED>
+
+<!ELEMENT Station_Facilities (Text | Photo)+>
+<!ELEMENT Text (#PCDATA)>
+<!ELEMENT Photo EMPTY>
+<!ATTLIST Photo url CDATA #REQUIRED>

@@ -1,0 +1,5 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE SELECT SYSTEM "SQL_Query_14.dtd">
+<SELECT>
+	<arith_exp>2 + 2</arith_exp>
+</SELECT>

@@ -1,0 +1,17 @@
+<!ELEMENT Boat_Hire (Marina+, Sailor*, Grade+)> <!-- In Original file, Sailor is a complex type within Sailors-->
+<!ELEMENT Marina(Boat+)>
+<!ATTLIST Marina name CDATA #REQUIRED Location CDATA #IMPLIED MarinaId CDATA #REQUIRED>
+<!ELEMENT Boat(Reserves*)>
+<!ATTLIST Boat name CDATA #REQUIRED Number CDATA #REQUIRED Color CDATA #REQUIRED>
+<!ELEMENT Reserves(Res_Sailor+)>
+<!ATTLIST Reserves Date CDATA #REQUIRED>
+<!ELEMENT Res_Sailor EMPTY>
+<!ATTLIST Res_Sailor SailorId IDREF #REQUIRED Ref_grade IDREF #FIXED "S" From CDATA #REQUIRED To CDATA #REQUIRED>
+<!ELEMENT Sailor(Name, Skills, Address?)>
+<!ATTLIST Sailor SailorId ID #REQUIRED 
+<!ATTLIST Sailor Ref_grade IDREF #REQUIRED>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Skills (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Grade(Name)>
+<!ATTLIST Grade GradeId ID #REQUIRED>

@@ -1,0 +1,21 @@
+a)
+1) f: {Boat_Hire.Sailors, Boat_Hire.Sailors.Sailor.@SailorId} ->
+																	Boat_Hire.Sailors.Sailor
+
+2) f: {Boat_Hire.Marina, Boat_Hire.Marina.Boat.@Number} ->
+															Boat_Hire.Marina.Boat
+3) f: {Boat_Hire.Marina, Boat_Hire.Marina.Boat.@Name}
+														->
+															Boat_Hire.Marina.Boat
+4) f: {Boat_Hire.Sailors, Boat_Hire.Sailors.@SailorId, Boat_Hire.Sailors.@ref_grade}
+														->
+															Boat_Hire.Sailors.Sailor
+5) f: {Boat_Hire.Marina.Boat.Reserves, Boat_Hire.Marina.Boat.Reserves.Res_Sailor.@SailorId}
+														->
+															Boat_Hire.Marina.Boat.Reserves.Res_Sailor
+
+
+b) f; {Boat_Hire.Marina, Boat_Hire.Marina.Boat.@Number, Boat_Hire.Marina.Boat.Reserves.@date}
+														->
+															Boat_Hire.Marina.Boat.Reserves
+

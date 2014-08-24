@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Boat_Hire">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="Marina" minOccurs="1">
+				<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Boat" minOccurs="1">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Number" type="xs:string"/>
+								<xs:element name="Color" type="xs:string"/>
+								<xs:element name="Reserves" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+									<xs:sequence>			
+										<xs:element name="Data" type="xs:date"/>
+									</xs:sequence>
+										<xs:attribute name="ref_sail" type="xs:IDREF" use="required"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="name" type="xs:string" use="required"/>
+						</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="name" type="xs:string" use="required"/>
+					<xs:attribute name="location" type="xs:string" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Sailors">
+					<xs:complexType>
+					<xs:sequence>
+					<xs:element name="Sailor">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Name" type="xs:string"/>
+								<xs:element name="Skills" type="xs:string"/>
+								<xs:element name="Address" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+							<xs:attribute name="SailorId" type="xs:ID" use="required"/>
+						</xs:complexType>
+				</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>

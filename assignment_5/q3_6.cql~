@@ -1,0 +1,2 @@
+consistency QUORUM;
+select * from user_activate_count;

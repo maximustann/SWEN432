@@ -1,0 +1,22 @@
+<!ELEMENT Boat_Hire (Marina+, Sailors, Grade+)>
+<!ELEMENT Marina (Boat)+>
+<!ATTLIST Marina name CDATA #REQUIRED location CDATA #IMPLIED MarinaId ID #REQUIRED>
+<!ELEMENT Boat (Color, Powered_By, Reserves*)>
+<!ELEMENT Color (#PCDATA)>
+<!ELEMENT Powered_By ((Rows, (Sail | Motor)?) | ((Sail, Motor?) | Motor))>
+<!ELEMENT Rows EMPTY>
+<!ELEMENT Sail EMPTY>
+<!ELEMENT Motor EMPTY>
+<!ATTLIST Boat name CDATA #REQUIRED Number ID #REQUIRED>
+<!ELEMENT Reserves (Res_Sailor+)>
+<!ATTLIST Reserves date CDATA #REQUIRED>
+<!ELEMENT Res_Sailor EMPTY>
+<!ATTLIST Res_Sailor ref_sail IDREF #REQUIRED grade CDATA #FIXED "S" from CDATA #REQUIRED to CDATA #REQUIRED>
+<!ELEMENT Sailors (Sailor)+>
+<!ELEMENT Sailor (Name, Skills, Address?)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Skills (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ATTLIST Sailor SailorId ID #REQUIRED ref_grade IDREF #REQUIRED>
+<!ELEMENT Grade (Name)>
+<!ATTLIST Grade GradeId ID #REQUIRED>

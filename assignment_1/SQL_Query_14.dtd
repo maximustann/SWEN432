@@ -1,0 +1,24 @@
+<!ELEMENT SELECT (arith_exp| (list_of_col_names, FROM+, WHERE?, GROUP_BY?, HAVING?, ORDER_BY?))>
+<!ELEMENT arith_exp (#PCDATA)>
+<!ELEMENT list_of_col_names (COL_NAME+)>
+<!ELEMENT COL_NAME (#PCDATA)>
+
+
+<!ELEMENT FROM (TAB_NAME+ , (SELECT, ALIAS)?)>
+<!ELEMENT TAB_NAME (#PCDATA)>
+
+<!ELEMENT ALIAS (#PCDATA)>
+
+
+<!ELEMENT WHERE (condition, (log_operator, condition)*)>
+<!ELEMENT log_operator (#PCDATA)>
+<!ELEMENT condition (COL_NAME, OPERATOR, (COL_NAME | VALUE | SELECT))>
+<!ELEMENT VALUE ANY>
+<!ELEMENT OPERATOR ANY>
+<!--ATTLIST OPERATOR-->
+
+<!ELEMENT GROUP_BY (list_of_col_names)>
+<!ELEMENT HAVING (condition)>
+<!ELEMENT ORDER_BY (list_of_col_names)>
+
+<!ATTLIST ORDER_BY sort_order (ASC|DESC) "ASC">

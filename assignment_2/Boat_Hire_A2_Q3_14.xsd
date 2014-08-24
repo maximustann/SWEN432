@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--define simple elements-->		
+<xs:element name="Color" type="xs:string"/>
+<xs:element name="Name" type="xs:string"/>
+<xs:element name="Skills" type="xs:string"/>
+<xs:element name="Address" type="xs:string"/>
+<xs:element name="Rows"/>
+<xs:element name="Sail"/>
+<xs:element name="Motor"/>
+
+<!--define attribute-->
+<xs:attribute name="name" type="xs:string"/>
+<xs:attribute name="location" type="xs:string"/>
+<xs:attribute name="MarinaId" type="xs:string"/>
+
+<xs:attribute name="Number" type="xs:string"/>
+<xs:attribute name="date" type="xs:string"/>
+
+<xs:attribute name="ref_sail" type="xs:string"/>
+<xs:attribute name="grade" type="xs:string"/>
+<xs:attribute name="from" type="xs:string"/>
+<xs:attribute name="to" type="xs:string"/>
+
+<xs:attribute name="SailorId">
+	<xs:simpleType>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="sa[0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:attribute>
+<xs:attribute name="ref_grade" type="xs:string"/>
+
+<xs:attribute name="GradeId" type="xs:string"/>
+
+
+<!-- define complexType  -->
+
+<xs:element name="Boat_Hire">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Marina" minOccurs="1" maxOccurs="unbounded"/>
+		<xs:element ref="Sailors"/>
+		<xs:element ref="Grade" minOccurs="1" maxOccurs="unbounded"/>
+	</xs:sequence>
+	</xs:complexType>
+	<xs:key name="key_MarinaId">
+		<xs:selector xpath=".//Marina"/>
+		<xs:field xpath="@MarinaId"/>
+	</xs:key>
+
+	<xs:key name="key_GradeId">
+		<xs:selector xpath="Grade"/>
+		<xs:field xpath="@GradeId"/>
+	</xs:key>
+
+</xs:element>
+
+<xs:element name="Marina">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Boat" minOccurs="1" maxOccurs="unbounded"/>				
+	</xs:sequence>
+	<xs:attribute ref="name" use="required"/>
+	<xs:attribute ref="location" use="optional"/>
+	<xs:attribute ref="MarinaId" use="required"/>
+	</xs:complexType>
+	<xs:key name="Number_key">
+		<xs:selector xpath="Boat"/>
+		<xs:field xpath="@Number"/>
+	</xs:key>
+
+	<xs:unique name="boat_name">
+		<xs:selector xpath="Boat"/>
+		<xs:field xpath="@name"/>
+	</xs:unique>
+
+
+
+</xs:element>
+
+<xs:element name="Boat">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Color"/>
+		<xs:element ref="Powered_By"/>
+		<xs:element ref="Reserves" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>		
+	<xs:attribute ref="name" use="required"/>
+	<xs:attribute ref="Number" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+
+<xs:element name="Powered_By">
+	<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="Rows"/>
+					<xs:choice minOccurs="0" maxOccurs="1">
+						<xs:element ref="Sail"/>
+						<xs:element ref="Motor"/>	
+					</xs:choice>
+				</xs:sequence>
+				<xs:choice>
+					<xs:sequence>
+						<xs:element ref="Sail"/>
+						<xs:element ref="Motor" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+					<xs:element ref="Motor"/>
+				</xs:choice>
+			</xs:choice>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="Reserves">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Res_Sailor" minOccurs="1" maxOccurs="unbounded"/>
+	</xs:sequence>
+	<xs:attribute ref="date" use="required"/>
+	</xs:complexType>
+	<xs:unique name="R_Sailor">
+		<xs:selector xpath="Res_Sailor"/>
+		<xs:field xpath="@ref_sail"/>
+</xs:unique>
+
+
+	<xs:key name="grade_key">
+		<xs:selector xpath="Res_Sailor"/>
+		<xs:field xpath="@ref_sail"/>
+		<xs:field xpath="@grade"/>
+	</xs:key>
+</xs:element>
+
+<xs:element name="Res_Sailor">
+	<xs:complexType>
+		<xs:attribute ref="ref_sail" use="required"/>
+		<xs:attribute ref="grade" fixed='S'/>
+		<xs:attribute ref="from" use="required"/>
+		<xs:attribute ref="to" use="required"/>
+</xs:complexType>
+
+
+</xs:element>
+
+<xs:element name="Sailors">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Sailor" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+	</xs:complexType>
+
+	<xs:keyref name="ref_grade_" refer="grade_key">
+		<xs:selector xpath="Sailor"/>
+		<xs:field xpath="@SailorId"/>
+		<xs:field xpath="@ref_grade"/>
+	</xs:keyref>
+</xs:element>
+
+
+
+<xs:element name="Sailor">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Name"/>
+		<xs:element ref="Skills"/>
+		<xs:element ref="Address" minOccurs="0" maxOccurs="1"/>
+	</xs:sequence>
+	<xs:attribute ref="SailorId" use="required"/>
+	<xs:attribute ref="ref_grade" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+
+<xs:element name="Grade">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Name"/>
+	</xs:sequence>
+	<xs:attribute ref="GradeId" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+
+</xs:schema>

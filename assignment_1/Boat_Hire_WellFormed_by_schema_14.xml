@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="no"?>
+	
+<Boat_Hire xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<Marina name = "Sea View" location = "Petone">
+
+		<Boat name = "Flying Dutch">
+			<Number>313</Number>
+			<Color>blue</Color>
+			<Reserves ref_sail="007">2014-03-14</Reserves>
+			<Reserves ref_sail="313">2003-03-17 &lt; 2014-03-15</Reserves>
+		</Boat>
+
+		<Boat name = "Blue Shark">
+			<Number>515</Number>
+			<Color>yellow</Color>
+			<Reserves ref_sail="007">2014-03-14</Reserves>
+			<Reserves ref_sail="999">2014-03-15</Reserves>
+		</Boat>
+	</Marina>
+	<Marina name = "Port Nickolson" location = "Wellington">
+
+		<Boat name = "Red Codd">
+			<Number>616</Number>
+			<Color>yellow</Color>
+			<Reserves ref_sail="999">2014-03-15</Reserves>
+		</Boat>
+	</Marina>
+		<Sailors>
+			<Sailor>
+				<Name>James</Name>
+				<Surname>Smith</Surname>
+				<SailorId>007</SailorId>
+			</Sailor>
+
+			<Sailor>
+				<Name>Peter</Name>
+				<SailorId>s111</SailorId>
+			</Sailor>
+
+			<Sailor>
+				<Name>Milan</Name>
+				<SailorId>s999</SailorId>
+				<Skills>Rowing, Sailing, First Aid</Skills>
+				<Address>Wellington</Address>
+			</Sailor>
+		</Sailors>
+</Boat_Hire>
+

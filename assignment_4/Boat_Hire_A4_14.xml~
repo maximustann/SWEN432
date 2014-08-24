@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="no"?>
+	
+<Boat_Hire>
+
+	<Marina name = "Sea View" location = "Petone" MarinaId = "sv">	
+
+		<Boat name = "Flying Dutch" Number = "b313">
+			<Color>blue</Color>
+			<Reserves date = "2014-03-14">
+			   <Res_Sailor SailorId = "sa777" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+			<Reserves date = "2014-03-17">
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "09:30:00" to = "15:30:00"/>
+			   <Res_Sailor SailorId = "sa515" ref_grade = "S"  from = "18:30:00" to = "16:00:00"/>
+			</Reserves>  
+			<Reserves date = "2014-03-23">
+			   <Res_Sailor SailorId = "sa515" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa888" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+
+		</Boat>
+
+		<Boat name = "Blue Shark" Number = "b515">
+			<Color>yellow</Color>
+			<Reserves date = "2014-03-23">
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa777" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+
+		</Boat>
+	</Marina>
+
+	<Marina name = "Port Nickolson" location = "Wellington" MarinaId = "pn">
+
+		<Boat name = "Flying Dutch" Number = "b616">
+			<Color>yellow</Color>
+			<Reserves date = "2014-03-23">
+			   <Res_Sailor SailorId = "sa515" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa888" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+			<Reserves date = "2014-03-23">
+			   <Res_Sailor SailorId = "sa515" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+
+		</Boat>
+
+		<Boat name = "White Cloud" Number = "b717">
+			<Color>red</Color>
+			<Reserves date = "2014-05-13">
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa888" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+
+		</Boat>
+
+		<Boat name = "Night Breeze" Number = "b818">
+			<Color>black</Color>
+		</Boat>
+
+		<Boat name = "Mermaid" Number = "b919">
+			<Color>white</Color>
+			<Reserves date = "2014-05-23">
+			   <Res_Sailor SailorId = "sa515" ref_grade = "S"  from = "10:00:00" to = "14:30:00"/>
+			   <Res_Sailor SailorId = "sa999" ref_grade = "S"  from = "15:00:00" to = "19:30:00"/>
+			</Reserves>  
+
+		</Boat>
+
+		<Boat name = "Dolphin" Number = "b010">
+			<Color>white</Color>
+		</Boat>
+	</Marina>
+
+	<Sailors>
+		<Sailor SailorId = "sa007" ref_grade = "A">
+			<Name>James</Name>
+			<Skills>Motorring, Fishing</Skills>
+		</Sailor>
+
+		<Sailor SailorId = "sa111" ref_grade = "C">
+			<Name>Peter</Name>
+			<Skills>Rowing, Sailing, Motorring</Skills>
+			<Address>Upper Hutt</Address>
+		</Sailor>
+
+		<Sailor SailorId = "sa515" ref_grade = "S">
+			<Name>Elaine</Name>
+			<Skills>Sailing, Dancing</Skills>
+			<Address>Trentham</Address>
+		</Sailor>
+
+		<Sailor SailorId = "sa666" ref_grade = "A">
+			<Name>Leonora</Name>
+			<Skills>Reading, Running</Skills>
+			<Address>Wellington</Address>
+		</Sailor>
+
+		<Sailor SailorId = "sa444" ref_grade = "C">
+			<Name>Simon</Name>
+			<Skills>Sailing, Rowing</Skills>
+			<Address>Trentham</Address>
+		</Sailor>
+
+
+		<Sailor SailorId = "sa777" ref_grade = "S">
+			<Name>Sally Ann</Name>
+			<Skills>Rowing, Sailing, Swimming</Skills>
+			<Address>Porirua</Address>
+		</Sailor>
+
+		
+		<Sailor SailorId = "sa888" ref_grade = "S">
+			<Name>James</Name>
+			<Skills>Rowing, Sailing, Diving</Skills>
+			<Address>Upper Hutt</Address>
+		</Sailor>
+
+		<Sailor SailorId = "sa999" ref_grade = "S">
+			<Name>Milan</Name>
+			<Skills>Rowing, Sailing, First Aid</Skills>
+			<Address>Wellington</Address>
+		</Sailor>
+
+	</Sailors>
+	
+	<Grade GradeId = "A">
+	  <Name>Apprentice</Name>
+	</Grade>
+	<Grade GradeId = "C">
+	  <Name>Crew Member</Name>
+	</Grade>
+	<Grade GradeId = "S">
+	  <Name>Skipper</Name>
+	</Grade>
+
+</Boat_Hire>

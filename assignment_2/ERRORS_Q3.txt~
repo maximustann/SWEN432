@@ -1,0 +1,69 @@
+Boat_Hire_A2_WRONG_a_14.xml:21: element Res_Sailor: Schemas validity error :
+Element 'Res_Sailor': Duplicate key-sequence ['sa777'] in unique
+identity-constraint 'R_Sailor'.
+
+comment:
+
+There are two [sa777] in <Reserves date = "2014-03-17">. In the question, we
+have define that there can not be more than one sailor reserve the boat at the
+same date.
+
+The error can not be solved by ID/IDREF.
+ID/IDREF could not detect duplicated situation like this. It could only detect
+definition of elements or attributes.
+
+==========================================
+
+Boat_Hire_A2_WRONG_a_14.xml:43: element Marina: Schemas validity error :
+Element 'Marina': Duplicate key-sequence ['pn'] in key identity-constraint
+'key_MarinaId'.
+
+comment:
+ID/IDREF could detect the error. But it gives a confused feedback of the
+error.
+
+Marina: Schemas validity error : Element 'Marina', attribute 'MarinaId': 'pn' is
+not a valid value of the atomic type 'xs:ID'.
+
+
+==========================================
+
+Boat_Hire_A2_WRONG_a_14.xml:136: element Sailor: Schemas validity error :
+Element 'Sailor': Duplicate key-sequence ['sa999'] in key identity-constraint
+'key_SailorId'.
+
+comment:
+Duplicate [sa999] in the Sailor definitions. It can be validated by ID/IDREF
+
+
+==========================================
+
+Boat_Hire_A2_WRONG_a_14.xml:153: element Grade: Schemas validity error :
+Element 'Grade': Duplicate key-sequence ['A'] in key identity-constraint
+'key_GradeId'.
+
+
+comment:
+Duplicate [A], It can be detected by ID/IDREF
+
+==========================================
+
+Boat_Hire_A2_WRONG_a_14.xml:136: Schemas validity error : Element 'Sailor': No
+match found for key-sequence ['sv'] of keyref 'r_grade'.
+
+comment: 
+[sv] can not be found in the Grade definition.
+This problem can be detected by IDREF.
+
+
+==========================================
+
+Boat_Hire_A2_WRONG_a_14.xml:24: Schemas validity error : Element 'Res_Sailor':
+No match found for key-sequence ['b515'] of keyref 'r_sail'.
+
+comment:
+Could not find [b515] in the Sailors' definition.
+This problem can not be solved by ID/IDREF.
+If define Sailor number="xs:ID", if there is a sailor's number is b515.
+However, there is Boat also has a number = b515. Then comflicts appear.
+
